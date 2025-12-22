@@ -10,15 +10,15 @@ The focus is on handling missing value, fixing data types and removing duplicate
 ## Cleaning Steps
 
 - Dropped very sparse columns "Street Number Suffix", "Unit Suffix", "Structural Notification".
-- Converted permit-related date fields to proper datetime date types.
+- Converted all permit-related date fields (`Permit Creation Date`, `Filed Date`, `Issued Date`, `Completed Date`, etc.) to proper datetime types.
 - Imputed key numeric fields ("Existing Units", "Proposed Units", "Existing Construction Type", "Proposed Construction Type", "Number of Existing Stories", "Number of Proposed Stories") using the median.
-- Created Flags: "Is_Completed" and "Has_Expiration_Date" instead of forcing date imputations.
+- Added boolean flags `Is_Completed` and `Has_Expiration_Date` to capture completion and expiration status instead of forcing date imputations.
 - Removed Duplicate records based on "Record ID".
 
 ## Example Insights
 
-- Distribution of completed vs open permits using the "Is_Completed" flag.
-- Number of permits fil per year using the cleaned 'Filed Date'.
+- Using the `Is_Completed` flag, it is easy to compare how many permits are completed vs still open.
+- With cleaned `Filed Date`, permits filed per year can be visualized to see how construction activity changes over time.
 
 ## Files
 
